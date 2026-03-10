@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class WatchlistController extends Controller
 {
+     // NAZLI
+    public function index()
+    {
+        return response()->json(
+            Watchlist::with('film')->get()
+        );
+    }
+        
         // ALYA
         public function store(Request $request)
         {

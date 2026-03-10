@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class FilmController extends Controller
 {
+       // NAZLI
+    public function index()
+    {
+        return response()->json(Film::with('genre')->get());
+    }
+
     // ALYA
     public function store(Request $request)
     {
@@ -17,6 +23,14 @@ class FilmController extends Controller
             'message' => 'Film created',
             'data' => $film
         ]);
+    }
+
+    // NAZLI
+    public function byGenre($genre_id)
+    {
+        $films = Film::where('genre_id', $genre_id)->get();
+    
+        return response()->json($films);
     }
     
     // MEGA
