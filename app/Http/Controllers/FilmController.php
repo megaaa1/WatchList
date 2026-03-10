@@ -8,5 +8,16 @@ use Illuminate\Http\Request;
 
 class FilmController extends Controller
 {
-    
+    // ALYA
+    public function store(Request $request)
+    {
+        $film = Film::create($request->all());
+
+        return response()->json([
+            'message' => 'Film created',
+            'data' => $film
+        ]);
+    }
+
+
 }
