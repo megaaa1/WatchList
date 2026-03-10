@@ -14,7 +14,8 @@ use App\Http\Controllers\WatchlistController;
 
 //alya
 Route::post('/films', [FilmController::class, 'store']);
-
+//mega
+Route::put('/films/{id}', [FilmController::class, 'update']);
 
 // WATCHLIST ROUTES
 //alya

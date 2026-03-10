@@ -18,6 +18,18 @@ class FilmController extends Controller
             'data' => $film
         ]);
     }
+    
+    // MEGA
+    public function update(Request $request, $id)
+    {
+        $film = Film::findOrFail($id);
+        $film->update($request->all());
+
+        return response()->json([
+            'message' => 'Film updated',
+            'data' => $film
+        ]);
+    }
 
 
 }
