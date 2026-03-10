@@ -18,6 +18,8 @@ Route::get('/films/genre/{genre_id}', [FilmController::class, 'byGenre']);
 Route::post('/films', [FilmController::class, 'store']);
 //mega
 Route::put('/films/{id}', [FilmController::class, 'update']);
+//dira
+Route::delete('/films/{id}', [FilmController::class, 'destroy']);
 
 // WATCHLIST ROUTES
 
@@ -25,3 +27,5 @@ Route::put('/films/{id}', [FilmController::class, 'update']);
 Route::get('/watchlists', [WatchlistController::class, 'index']);
 //alya
 Route::post('/watchlists', [WatchlistController::class, 'store']);
+//dira
+Route::delete('/watchlists/{id}', [WatchlistController::class, 'destroy']);

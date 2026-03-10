@@ -45,5 +45,13 @@ class FilmController extends Controller
         ]);
     }
 
+   // DIRA
+    public function destroy($id)
+    {
+        Film::destroy($id);
 
+        return response()->json([
+            'message' => 'Film deleted'
+        ]);
+    }
 }
