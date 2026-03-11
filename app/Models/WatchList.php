@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class WatchList extends Model
 {
-    protected $table = 'watchlists';
+    protected $table = 'watch_lists';
 
     public $timestamps = false;
 

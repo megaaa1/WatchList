@@ -12,7 +12,7 @@ class WatchlistController extends Controller
     public function index()
     {
         return response()->json(
-            Watchlist::with('film')->get()
+            Watchlist::with('films')->get()
         );
     }
         
