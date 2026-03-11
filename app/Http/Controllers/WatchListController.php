@@ -40,15 +40,26 @@ class WatchlistController extends Controller
             'message' => 'Film added to watchlist'
         ]);
     }
-
     
-    // DIRA
-    public function destroy($id)
+   // DIRA 
+    public function removeFilm($watchlist_id, $film_id)
     {
-        Watchlist::destroy($id);
+        $watchlist = WatchList::findOrFail($watchlist_id);
+
+        $watchlist->films()->detach($film_id);
 
         return response()->json([
-            'message' => 'Removed from watchlist'
+            'message' => 'Film removed from watchlist'
+        ]);
+    }
+
+    // DIRA 
+    public function destroy($id)
+    {
+        WatchList::destroy($id);
+
+        return response()->json([
+            'message' => 'Watchlist deleted'
         ]);
     }
 }

@@ -29,5 +29,6 @@ Route::get('/watchlists', [WatchlistController::class, 'index']);
 Route::post('/watchlists', [WatchlistController::class, 'store']);
 Route::post('/watchlists/{watchlist_id}/films', [WatchlistController::class, 'addFilm']);
 
-//dira
+// DIRA
+Route::delete('/watchlists/{watchlist_id}/films/{film_id}', [WatchlistController::class, 'removeFilm']);
 Route::delete('/watchlists/{id}', [WatchlistController::class, 'destroy']);
