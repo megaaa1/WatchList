@@ -28,8 +28,10 @@ class FilmController extends Controller
     // NAZLI
     public function byGenre($genre_id)
     {
-        $films = Film::where('genre_id', $genre_id)->get();
-    
+        $films = Film::with('genre')
+            ->where('genre_id', $genre_id)
+            ->get();
+
         return response()->json($films);
     }
     

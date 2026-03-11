@@ -19,16 +19,28 @@ class WatchlistController extends Controller
     // ALYA
     public function store(Request $request)
     {
-        $watchlist = Watchlist::create([
-            'film_id' => $request->film_id,
-            'status' => 'planned'
+        $watchlist = WatchList::create([
+            'name' => $request->name
         ]);
 
         return response()->json([
-            'message' => 'Film added to watchlist',
+            'message' => 'Watchlist created',
             'data' => $watchlist
         ]);
     }
+
+    // ALYA
+    public function addFilm(Request $request, $watchlist_id)
+    {
+        $watchlist = WatchList::findOrFail($watchlist_id);
+
+        $watchlist->films()->attach($request->film_id);
+
+        return response()->json([
+            'message' => 'Film added to watchlist'
+        ]);
+    }
+
     
     // DIRA
     public function destroy($id)

@@ -27,5 +27,7 @@ Route::delete('/films/{id}', [FilmController::class, 'destroy']);
 Route::get('/watchlists', [WatchlistController::class, 'index']);
 //alya
 Route::post('/watchlists', [WatchlistController::class, 'store']);
+Route::post('/watchlists/{watchlist_id}/films', [WatchlistController::class, 'addFilm']);
+
 //dira
 Route::delete('/watchlists/{id}', [WatchlistController::class, 'destroy']);

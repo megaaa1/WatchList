@@ -6,16 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class WatchList extends Model
 {
-    protected $table = 'watch_lists';
+    protected $table = 'watchlists';
 
     public $timestamps = false;
 
     protected $fillable = [
-        'film_id'
+        'name'
     ];
 
-    public function film()
+    public function films()
     {
-        return $this->belongsTo(Film::class, 'film_id');
+        return $this->belongsToMany(
+            Film::class,
+            'watchlist_films',
+            'watchlist_id',
+            'film_id'
+        );
     }
 }
