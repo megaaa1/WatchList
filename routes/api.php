@@ -28,7 +28,8 @@ Route::get('/watchlists', [WatchlistController::class, 'index']);
 //alya
 Route::post('/watchlists', [WatchlistController::class, 'store']);
 Route::post('/watchlists/{watchlist_id}/films', [WatchlistController::class, 'addFilm']);
-
+//MEGA
+Route::put('/watchlists/{id}', [WatchlistController::class, 'update']);
 // DIRA
 Route::delete('/watchlists/{watchlist_id}/films/{film_id}', [WatchlistController::class, 'removeFilm']);
 Route::delete('/watchlists/{id}', [WatchlistController::class, 'destroy']);

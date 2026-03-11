@@ -41,6 +41,21 @@ class WatchlistController extends Controller
         ]);
     }
     
+    // MEGA
+    public function update(Request $request, $id)
+    {
+        $watchlist = WatchList::findOrFail($id);
+
+        $watchlist->update([
+            'name' => $request->name
+        ]);
+
+        return response()->json([
+            'message' => 'Watchlist updated',
+            'data' => $watchlist
+        ]);
+    }
+
    // DIRA 
     public function removeFilm($watchlist_id, $film_id)
     {
